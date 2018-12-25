@@ -1,0 +1,9 @@
+D:\SG\VSProjects\ITNVPluginPlayMsg\ITNVPlayMsgManager\ITNVPlayMsgManager\bin\ITNVPlayMsgManager.dll.config
+D:\SG\VSProjects\ITNVPluginPlayMsg\ITNVPlayMsgManager\ITNVPlayMsgManager\bin\ITNVPlayMsgManager.dll
+D:\SG\VSProjects\ITNVPluginPlayMsg\ITNVPlayMsgManager\ITNVPlayMsgManager\bin\ITNVPlayMsgManager.pdb
+D:\SG\VSProjects\ITNVPluginPlayMsg\ITNVPlayMsgManager\ITNVPlayMsgManager\bin\log4net.dll
+D:\SG\VSProjects\ITNVPluginPlayMsg\ITNVPlayMsgManager\ITNVPlayMsgManager\bin\Newtonsoft.Json.dll
+D:\SG\VSProjects\ITNVPluginPlayMsg\ITNVPlayMsgManager\ITNVPlayMsgManager\obj\Debug\ITNVPlayMsgManager.csproj.CoreCompileInputs.cache
+D:\SG\VSProjects\ITNVPluginPlayMsg\ITNVPlayMsgManager\ITNVPlayMsgManager\obj\Debug\ITNVPlayMsgManager.csproj.CopyComplete
+D:\SG\VSProjects\ITNVPluginPlayMsg\ITNVPlayMsgManager\ITNVPlayMsgManager\obj\Debug\ITNVPlayMsgManager.dll
+D:\SG\VSProjects\ITNVPluginPlayMsg\ITNVPlayMsgManager\ITNVPlayMsgManager\obj\Debug\ITNVPlayMsgManager.pdb

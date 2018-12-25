@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\SG\VSProjects\ITNVPluginPlayMsg\ITNVPlayMsgManager\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>12/10/2018 16:51:12</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>12/10/2018 16:51:12</publishTime>
+    </File>
+    <File Include="bin/ITNVPlayMsgManager.dll">
+      <publishTime>12/21/2018 13:04:49</publishTime>
+    </File>
+    <File Include="bin/ITNVPlayMsgManager.pdb">
+      <publishTime>12/21/2018 13:04:49</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>05/28/2017 18:33:20</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/04/2017 18:32:18</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/28/2018 18:05:33</publishTime>
+    </File>
+    <File Include="ITNVPlayMsgManager.asmx">
+      <publishTime>11/28/2018 18:12:10</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>12/10/2018 16:51:10</publishTime>
+    </File>
+    <File Include="Web References/TelService/empty1.datasource">
+      <publishTime>11/28/2018 17:46:06</publishTime>
+    </File>
+    <File Include="Web References/TelService/Reference.map">
+      <publishTime>11/28/2018 15:38:34</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/21/2018 13:04:55</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

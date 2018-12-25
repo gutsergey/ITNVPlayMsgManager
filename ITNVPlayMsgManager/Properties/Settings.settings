@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ITNVPlayMsgManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ITNVPlayMsgManager_TelService_TelephonyServiceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://172.16.5.214/axis/services/TelephonyService</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

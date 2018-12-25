@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns3="http://xml.avaya.com/ws/session" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://xml.avaya.com/ws/TelephonyService/2005/04/04" xmlns:tns2="http://basictelephony.api.avaya.com" xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns1="http://TelephonyService.ws.avaya.com" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://xml.avaya.com/ws/TelephonyService/2005/04/04" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://TelephonyService.ws.avaya.com">
+      <xsd:element name="makeCall" type="tns1:endpoints" />
+      <xsd:element name="singleStepConferenceCall" type="tns1:endpoints" />
+      <xsd:element name="singleStepTransferCall" type="tns1:endpoints" />
+      <xsd:complexType name="endpoints">
+        <xsd:sequence>
+          <xsd:element name="originatingExtension" type="xsd:string" />
+          <xsd:element name="destinationNumber" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="release" nillable="true" type="xsd:string" />
+      <xsd:element name="attach" nillable="true" type="xsd:string" />
+      <xsd:element name="disconnectActiveCall" type="tns1:extension" />
+      <xsd:element name="answerAlertingCall" type="tns1:extension" />
+      <xsd:complexType name="extension">
+        <xsd:sequence>
+          <xsd:element name="extension" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="disconnectActiveCallResponse" type="tns1:empty" />
+      <xsd:element name="makeCallResponse" type="tns1:empty" />
+      <xsd:element name="singleStepConferenceCallResponse" type="tns1:empty" />
+      <xsd:element name="attachResponse" type="tns1:empty" />
+      <xsd:element name="releaseResponse" type="tns1:empty" />
+      <xsd:element name="answerAlertingCallResponse" type="tns1:empty" />
+      <xsd:element name="singleStepTransferCallResponse" type="tns1:empty" />
+      <xsd:complexType name="empty" />
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://basictelephony.api.avaya.com">
+      <xsd:element name="InvalidSessionException" type="tns2:InvalidSessionException" />
+      <xsd:complexType name="InvalidSessionException">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="BasicTelephonyException" type="tns2:BasicTelephonyException" />
+      <xsd:complexType name="BasicTelephonyException">
+        <xsd:sequence>
+          <xsd:element name="subErrorCode" type="xsd:int" />
+          <xsd:element name="errorMessage" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SwitchNotReachableException" type="tns2:SwitchNotReachableException" />
+      <xsd:complexType name="SwitchNotReachableException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BasicTelephonyException">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InvalidPartyException" type="tns2:InvalidPartyException" />
+      <xsd:complexType name="InvalidPartyException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BasicTelephonyException">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ActiveCallExistsException" type="tns2:ActiveCallExistsException" />
+      <xsd:complexType name="ActiveCallExistsException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BasicTelephonyException">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="NoActiveCallException" type="tns2:NoActiveCallException" />
+      <xsd:complexType name="NoActiveCallException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BasicTelephonyException">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="NoAlertingCallException" type="tns2:NoAlertingCallException" />
+      <xsd:complexType name="NoAlertingCallException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BasicTelephonyException">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InvalidCredentialsException" type="tns2:InvalidCredentialsException" />
+      <xsd:complexType name="InvalidCredentialsException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BasicTelephonyException">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.avaya.com/ws/session">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/envelope/" />
+      <xsd:element name="sessionID" type="xsd:string" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SessionID">
+    <wsdl:part name="sessionID" element="tns3:sessionID" />
+  </wsdl:message>
+  <wsdl:message name="disconnectActiveCallRequest">
+    <wsdl:part name="extension" element="tns1:disconnectActiveCall" />
+  </wsdl:message>
+  <wsdl:message name="disconnectActiveCallResponse">
+    <wsdl:part name="body" element="tns1:disconnectActiveCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="attachRequest">
+    <wsdl:part name="nothing" element="tns1:attach" />
+  </wsdl:message>
+  <wsdl:message name="attachResponse">
+    <wsdl:part name="attachResponse" element="tns1:attachResponse" />
+  </wsdl:message>
+  <wsdl:message name="singleStepConferenceCallRequest">
+    <wsdl:part name="endpoints" element="tns1:singleStepConferenceCall" />
+  </wsdl:message>
+  <wsdl:message name="singleStepConferenceCallResponse">
+    <wsdl:part name="singleStepConferenceCallResponse" element="tns1:singleStepConferenceCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="makeCallRequest">
+    <wsdl:part name="endpoints" element="tns1:makeCall" />
+  </wsdl:message>
+  <wsdl:message name="makeCallResponse">
+    <wsdl:part name="makeCallResponse" element="tns1:makeCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="releaseRequest">
+    <wsdl:part name="nothing" element="tns1:release" />
+  </wsdl:message>
+  <wsdl:message name="releaseResponse">
+    <wsdl:part name="releaseResponse" element="tns1:releaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="answerAlertingCallRequest">
+    <wsdl:part name="extension" element="tns1:answerAlertingCall" />
+  </wsdl:message>
+  <wsdl:message name="answerAlertingCallResponse">
+    <wsdl:part name="answerAlertingCallResponse" element="tns1:answerAlertingCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="singleStepTransferCallRequest">
+    <wsdl:part name="endpoints" element="tns1:singleStepTransferCall" />
+  </wsdl:message>
+  <wsdl:message name="singleStepTransferCallResponse">
+    <wsdl:part name="singleStepTransferCallResponse" element="tns1:singleStepTransferCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActiveCallExistsException">
+    <wsdl:part name="fault" element="tns2:ActiveCallExistsException" />
+  </wsdl:message>
+  <wsdl:message name="InvalidCredentialsException">
+    <wsdl:part name="fault" element="tns2:InvalidCredentialsException" />
+  </wsdl:message>
+  <wsdl:message name="InvalidPartyException">
+    <wsdl:part name="fault" element="tns2:InvalidPartyException" />
+  </wsdl:message>
+  <wsdl:message name="SwitchNotReachableException">
+    <wsdl:part name="fault" element="tns2:SwitchNotReachableException" />
+  </wsdl:message>
+  <wsdl:message name="NoAlertingCallException">
+    <wsdl:part name="fault" element="tns2:NoAlertingCallException" />
+  </wsdl:message>
+  <wsdl:message name="InvalidSessionException">
+    <wsdl:part name="fault" element="tns2:InvalidSessionException" />
+  </wsdl:message>
+  <wsdl:message name="NoActiveCallException">
+    <wsdl:part name="fault" element="tns2:NoActiveCallException" />
+  </wsdl:message>
+  <wsdl:portType name="TelephonyService">
+    <wsdl:operation name="release">
+      <wsdl:input name="releaseRequest" message="impl:releaseRequest" />
+      <wsdl:output name="releaseResponse" message="impl:releaseResponse" />
+      <wsdl:fault name="InvalidSessionException" message="impl:InvalidSessionException" />
+    </wsdl:operation>
+    <wsdl:operation name="attach">
+      <wsdl:input name="attachRequest" message="impl:attachRequest" />
+      <wsdl:output name="attachResponse" message="impl:attachResponse" />
+      <wsdl:fault name="InvalidCredentialsException" message="impl:InvalidCredentialsException" />
+      <wsdl:fault name="InvalidSessionException" message="impl:InvalidSessionException" />
+      <wsdl:fault name="SwitchNotReachableException" message="impl:SwitchNotReachableException" />
+    </wsdl:operation>
+    <wsdl:operation name="makeCall">
+      <wsdl:input name="makeCallRequest" message="impl:makeCallRequest" />
+      <wsdl:output name="makeCallResponse" message="impl:makeCallResponse" />
+      <wsdl:fault name="InvalidCredentialsException" message="impl:InvalidCredentialsException" />
+      <wsdl:fault name="InvalidSessionException" message="impl:InvalidSessionException" />
+      <wsdl:fault name="SwitchNotReachableException" message="impl:SwitchNotReachableException" />
+      <wsdl:fault name="ActiveCallExistsException" message="impl:ActiveCallExistsException" />
+      <wsdl:fault name="InvalidPartyException" message="impl:InvalidPartyException" />
+    </wsdl:operation>
+    <wsdl:operation name="disconnectActiveCall">
+      <wsdl:input name="disconnectActiveCallRequest" message="impl:disconnectActiveCallRequest" />
+      <wsdl:output name="disconnectActiveCallResponse" message="impl:disconnectActiveCallResponse" />
+      <wsdl:fault name="InvalidCredentialsException" message="impl:InvalidCredentialsException" />
+      <wsdl:fault name="InvalidSessionException" message="impl:InvalidSessionException" />
+      <wsdl:fault name="SwitchNotReachableException" message="impl:SwitchNotReachableException" />
+      <wsdl:fault name="InvalidPartyException" message="impl:InvalidPartyException" />
+      <wsdl:fault name="NoActiveCallException" message="impl:NoActiveCallException" />
+    </wsdl:operation>
+    <wsdl:operation name="singleStepTransferCall">
+      <wsdl:input name="singleStepTransferCallRequest" message="impl:singleStepTransferCallRequest" />
+      <wsdl:output name="singleStepTransferCallResponse" message="impl:singleStepTransferCallResponse" />
+      <wsdl:fault name="InvalidCredentialsException" message="impl:InvalidCredentialsException" />
+      <wsdl:fault name="InvalidSessionException" message="impl:InvalidSessionException" />
+      <wsdl:fault name="SwitchNotReachableException" message="impl:SwitchNotReachableException" />
+      <wsdl:fault name="InvalidPartyException" message="impl:InvalidPartyException" />
+      <wsdl:fault name="NoActiveCallException" message="impl:NoActiveCallException" />
+    </wsdl:operation>
+    <wsdl:operation name="singleStepConferenceCall">
+      <wsdl:input name="singleStepConferenceCallRequest" message="impl:singleStepConferenceCallRequest" />
+      <wsdl:output name="singleStepConferenceCallResponse" message="impl:singleStepConferenceCallResponse" />
+      <wsdl:fault name="InvalidCredentialsException" message="impl:InvalidCredentialsException" />
+      <wsdl:fault name="InvalidSessionException" message="impl:InvalidSessionException" />
+      <wsdl:fault name="SwitchNotReachableException" message="impl:SwitchNotReachableException" />
+      <wsdl:fault name="InvalidPartyException" message="impl:InvalidPartyException" />
+      <wsdl:fault name="NoActiveCallException" message="impl:NoActiveCallException" />
+    </wsdl:operation>
+    <wsdl:operation name="answerAlertingCall">
+      <wsdl:input name="answerAlertingCallRequest" message="impl:answerAlertingCallRequest" />
+      <wsdl:output name="answerAlertingCallResponse" message="impl:answerAlertingCallResponse" />
+      <wsdl:fault name="NoAlertingCallException" message="impl:NoAlertingCallException" />
+      <wsdl:fault name="InvalidCredentialsException" message="impl:InvalidCredentialsException" />
+      <wsdl:fault name="InvalidSessionException" message="impl:InvalidSessionException" />
+      <wsdl:fault name="SwitchNotReachableException" message="impl:SwitchNotReachableException" />
+      <wsdl:fault name="ActiveCallExistsException" message="impl:ActiveCallExistsException" />
+      <wsdl:fault name="InvalidPartyException" message="impl:InvalidPartyException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TelephonyServiceSoapBinding" type="impl:TelephonyService">
+    <soapbind:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="release">
+      <soapbind:operation soapAction="" />
+      <wsdl:input name="releaseRequest">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="releaseResponse">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionException">
+        <soapbind:fault use="literal" name="InvalidSessionException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="attach">
+      <soapbind:operation soapAction="" />
+      <wsdl:input name="attachRequest">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="attachResponse">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidCredentialsException">
+        <soapbind:fault use="literal" name="InvalidCredentialsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSessionException">
+        <soapbind:fault use="literal" name="InvalidSessionException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SwitchNotReachableException">
+        <soapbind:fault use="literal" name="SwitchNotReachableException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="makeCall">
+      <soapbind:operation soapAction="" />
+      <wsdl:input name="makeCallRequest">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="makeCallResponse">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidCredentialsException">
+        <soapbind:fault use="literal" name="InvalidCredentialsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSessionException">
+        <soapbind:fault use="literal" name="InvalidSessionException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SwitchNotReachableException">
+        <soapbind:fault use="literal" name="SwitchNotReachableException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ActiveCallExistsException">
+        <soapbind:fault use="literal" name="ActiveCallExistsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidPartyException">
+        <soapbind:fault use="literal" name="InvalidPartyException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="disconnectActiveCall">
+      <soapbind:operation soapAction="" />
+      <wsdl:input name="disconnectActiveCallRequest">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="disconnectActiveCallResponse">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidCredentialsException">
+        <soapbind:fault use="literal" name="InvalidCredentialsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSessionException">
+        <soapbind:fault use="literal" name="InvalidSessionException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SwitchNotReachableException">
+        <soapbind:fault use="literal" name="SwitchNotReachableException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidPartyException">
+        <soapbind:fault use="literal" name="InvalidPartyException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="NoActiveCallException">
+        <soapbind:fault use="literal" name="NoActiveCallException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="singleStepTransferCall">
+      <soapbind:operation soapAction="" />
+      <wsdl:input name="singleStepTransferCallRequest">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="singleStepTransferCallResponse">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidCredentialsException">
+        <soapbind:fault use="literal" name="InvalidCredentialsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSessionException">
+        <soapbind:fault use="literal" name="InvalidSessionException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SwitchNotReachableException">
+        <soapbind:fault use="literal" name="SwitchNotReachableException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidPartyException">
+        <soapbind:fault use="literal" name="InvalidPartyException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="NoActiveCallException">
+        <soapbind:fault use="literal" name="NoActiveCallException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="singleStepConferenceCall">
+      <soapbind:operation soapAction="" />
+      <wsdl:input name="singleStepConferenceCallRequest">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="singleStepConferenceCallResponse">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidCredentialsException">
+        <soapbind:fault use="literal" name="InvalidCredentialsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSessionException">
+        <soapbind:fault use="literal" name="InvalidSessionException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SwitchNotReachableException">
+        <soapbind:fault use="literal" name="SwitchNotReachableException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidPartyException">
+        <soapbind:fault use="literal" name="InvalidPartyException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="NoActiveCallException">
+        <soapbind:fault use="literal" name="NoActiveCallException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="answerAlertingCall">
+      <soapbind:operation soapAction="" />
+      <wsdl:input name="answerAlertingCallRequest">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="answerAlertingCallResponse">
+        <soapbind:header message="impl:SessionID" part="sessionID" use="literal" />
+        <soapbind:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="NoAlertingCallException">
+        <soapbind:fault use="literal" name="NoAlertingCallException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidCredentialsException">
+        <soapbind:fault use="literal" name="InvalidCredentialsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSessionException">
+        <soapbind:fault use="literal" name="InvalidSessionException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SwitchNotReachableException">
+        <soapbind:fault use="literal" name="SwitchNotReachableException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ActiveCallExistsException">
+        <soapbind:fault use="literal" name="ActiveCallExistsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidPartyException">
+        <soapbind:fault use="literal" name="InvalidPartyException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TelephonyServiceService">
+    <wsdl:port name="TelephonyService" binding="impl:TelephonyServiceSoapBinding">
+      <soapbind:address location="https://172.16.5.214/axis/services/TelephonyService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
